@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Book  do
+RSpec.describe Book, type: :model do
   context "validations" do
      it { should validate_presence_of(:title) }
      it { should validate_presence_of(:description) }
