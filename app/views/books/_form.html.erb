@@ -1,0 +1,6 @@
+<%= simple_form_for @book do |f| %>
+	<%= f.input :title, label: "Book Title" %>
+	<%= f.input :description "Book Description" %>
+	<%= f.input :cover_url "Book cover image url"%>
+	<%= f.button :submit %>
+<% end %>
