@@ -2,4 +2,11 @@
 
 <% @books.each do |book| %>
 	<%= book.title  %>
+	<br>
+	<h6><%= "Book added: #{ book.created_at.strftime('%b %d, %Y') }" %></h6>
+	<p>
+		<%= link_to "View Book", book_path(book) %>
+		<%= link_to "Edit Book", edit_book_path(book) %>
+		<hr>
+	</p>
 <% end %>
