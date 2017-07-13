@@ -1,5 +1,7 @@
 <h1>Books Catalogue</h1>
 
+<%= link_to "Add new Book", new_book_path %>
+<hr>
 <% @books.each do |book| %>
 	<%= book.title  %>
 	<br>
@@ -7,6 +9,6 @@
 	<p>
 		<%= link_to "View Book", book_path(book) %>
 		<%= link_to "Edit Book", edit_book_path(book) %>
-		<hr>
 	</p>
+	<hr>
 <% end %>
