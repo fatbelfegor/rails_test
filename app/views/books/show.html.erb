@@ -1,10 +1,14 @@
 <div>
-			<h2><%= @book.title %></h2>
-			<hr>
+	<h2><%= @book.title %></h2>
+	<hr>
+	<%= link_to "Edit Book", edit_book_path %>
+	<div>
+		<row>
 			<p><%= @book.description %></p>
 
-		<div>
+		</row>
+		<row>
 			<%= image_tag @book.cover_url %>
-		</div>
-		</div>
+		</row>
 	</div>
+</div>
