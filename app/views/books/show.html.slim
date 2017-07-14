@@ -1,0 +1,14 @@
+div
+  h2
+    = @book.title
+  hr
+  = link_to "Book Catalogue", root_path
+  = link_to "Edit Book", edit_book_path
+  div
+    row
+      p
+        = @book.description
+      h6
+        = "Book added: #{ @book.created_at.strftime('%b %d, %Y') }"
+    row
+      = image_tag @book.cover_url

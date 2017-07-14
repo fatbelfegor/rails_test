@@ -54,4 +54,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
