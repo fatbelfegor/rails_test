@@ -2,8 +2,9 @@ div
   h2
     = @book.title
   hr
-  = link_to "Book Catalogue", root_path
-  = link_to "Edit Book", edit_book_path
+  = link_to "Book Catalogue | ", root_path
+  = link_to "Edit Book | ", edit_book_path
+  = link_to "Delete", book_path, method: :delete, data: {confirm: "Are you sure?" }
   div
     row
       p

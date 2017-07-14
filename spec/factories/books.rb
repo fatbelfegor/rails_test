@@ -4,10 +4,4 @@ FactoryGirl.define do
     description {Faker::Lorem.sentence(8) }
     cover_url {Faker::Internet.url }
   end
-
-  factory :book1 do
-    title { Faker::Book.title }
-    description {Faker::Lorem.sentence(8) }
-    cover_url {Faker::Internet.url }
-  end
 end

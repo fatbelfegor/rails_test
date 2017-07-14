@@ -3,11 +3,13 @@ h1
 = link_to "Add new Book", new_book_path
 hr
 - @books.each do |book|
-  = book.title
-  br
-  h6
-    = "Book added: #{ book.created_at.strftime('%b %d, %Y,  at: %H:%M') }"
-  p
-    = link_to "View Book", book_path(book)
-    = link_to "Edit Book", edit_book_path(book)
-  hr
+	h4
+	  = book.title
+	  br
+	  h5
+	    = "Book added: #{ book.created_at.strftime('%b %d, %Y,  at: %H:%M') }"
+	  p
+	    = link_to "View Book | ", book_path(book)
+	    = link_to "Edit Book | ", edit_book_path(book)
+	    = link_to " Delete", book_path(book), method: :delete, data: {confirm: "Are you sure?" }
+	  hr
