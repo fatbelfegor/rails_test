@@ -25,13 +25,13 @@ RSpec.describe BooksController, :type => :request do
       expect(response).to render_template(:new)
     end
 
-    it "Creates and saves the new book in the database" do
+    it "Creates and saves a new book in the database" do
       post "/books", params: {book: attributes_for(:book)}
       expect { post "/books", params: {book: attributes_for(:book)} }.to change(Book, :count).by(1)
     end
   end
 
-  describe "GET /books/:id/edit" do
+  describe "PUT /books/:id/" do
 
     it "Generate #edit template" do
       get "/books/#{book_id}/edit"
@@ -43,8 +43,18 @@ RSpec.describe BooksController, :type => :request do
       book.reload
       expect(book.title).to eq('Vaping fo Dummies')
     end
+  end
 
+  describe "DELETE /books/:id/" do
 
+    it "Delete a book from the database" do
+      expect { delete "/books/#{book_id}" }.to change(Book, :count).by(-1)
+    end
+
+    it 'Redirect to Catalogue index' do
+      delete "/books/#{book_id}"
+      expect(response).to redirect_to root_path
+    end
   end
 
 
