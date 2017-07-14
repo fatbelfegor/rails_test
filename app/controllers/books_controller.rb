@@ -10,11 +10,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
   end
 
   def create
     @book = Book.new(book_params)
+
     if @book.save
       flash[:success] = "New book added"
       redirect_to book_path(@book)
