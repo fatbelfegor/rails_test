@@ -12,7 +12,7 @@ RSpec.describe BooksController, :type => :request do
         expect(response.status).to eq(200)
       end
 
-      it "Generate #show template" do
+      it "generate #show template" do
         expect(response).to render_template(:show)
       end
     end
@@ -52,6 +52,4 @@ RSpec.describe BooksController, :type => :request do
       expect(response).to redirect_to root_path
     end
   end
-
-
 end
